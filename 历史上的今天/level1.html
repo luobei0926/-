@@ -22,6 +22,21 @@
         window.onload = function() {
             var btn = document.querySelector("#btn");
             var day = document.querySelector("#day");
+            var close = document.querySelector("#colse");
+            console.log(close);
+            var img2 = document.querySelector("#img2");
+            $("#img2").click(function() {
+                if ($("#colse").css("display") == "none") {
+                    $("#colse").show();
+                    document.getElementsByTagName("body")[0].style.background = "#ccc";
+
+                } else {
+                    $("#colse").hide();
+                    document.getElementsByTagName("body")[0].style.background = "white";
+                }
+
+
+            });
 
             myAjax({
                 // url: "http://musicapi.leanapp.cn/personalized",
@@ -53,12 +68,25 @@
         <div class="one">
             <div class="img1"></div>
             <div class="text">历史上的今天</div>
-            <div class="img2"></div>
+            <button class="img2" id="img2"></button>
         </div>
 
     </header>
 
+
+
+
     <header class="head_sec">
+        <div class="colse" id="colse">
+            <ul class="list">
+                <li><a href="#">电话区号查询</a></li>
+                <li>手机号码查询</li>
+                <li>万年历查询</li>
+                <li>IP地址查询</li>
+                <li>北京时间查询</li>
+            </ul>
+        </div>
+
         <div class="one">
             <div class="img1"></div>
             <span class="day" id="day"></span>
