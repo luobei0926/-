@@ -44,9 +44,9 @@
 
                 success: function(data) {
                     var html = "";
-                    console.log(data);
+                    console.log(data.day);
 
-                    day.innerHTML = data.day.substring(0, data.day.indexOf("/")) + "月" + data.day.substring(data.day.indexOf("/"), -1) + "日";
+                    day.innerHTML = data.day.substring(0, data.day.indexOf("/")) + "月" + data.day.substring(data.day.indexOf("/") + 2, 6) + "日";
                     for (var i = 0; i < data['result'].length; i++) { //遍历data数组 
                         var date = data['result'][i].date.substring(0, data['result'][i].date.indexOf("年") + 1);
                         var title = data['result'][i].title;
